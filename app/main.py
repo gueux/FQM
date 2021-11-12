@@ -11,6 +11,7 @@ from flask_datepicker import datepicker
 from flask_colorpicker import colorpicker
 from flask_fontpicker import fontpicker
 from flask_minify import minify
+
 from sqlalchemy.exc import OperationalError
 
 from app.middleware import db, login_manager, files, gtranslator, gTTs, migrate
@@ -49,11 +50,17 @@ def create_app(config={}):
     app.config['UPLOADED_FILES_ALLOW'] = reduce(lambda sum, group: sum + group, SUPPORTED_MEDIA_FILES)
     app.config['SECRET_KEY'] = SECRET_KEY
     app.config['RESTX_VALIDATE'] = True
+    # MQTT config
+    app.config['MQTT_BROKER_URL'] = os.environ.get('MQTT_BROKER_URL', '0.0.0.0')
+    app.config['MQTT_BROKER_PORT'] = os.environ.get('MQTT_BROKER_PORT', 1883)
+    app.config['MQTT_USERNAME'] = os.environ.get('MQTT_USERNAME', '')
+    app.config['MQTT_PASSWORD'] = os.environ.get('MQTT_PASSWORD', '')
     app.config.update(config)
 
     # Initiating extensions before registering blueprints
     Moment(app)
     QRcode(app)
+
     configure_uploads(app, files)
     login_manager.init_app(app)
     db.init_app(app)

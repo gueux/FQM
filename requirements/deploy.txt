@@ -22,6 +22,7 @@ Flask-gTTS==0.18
 Flask-Login==0.4.0
 Flask-Mail==0.9.1
 Flask-Minify==0.25
+Flask-MQTT==1.1.1
 Flask-Moment==0.9.0
 Flask-QRcode==1.0.1
 Flask-Script==2.0.5
@@ -61,7 +62,7 @@ python-dateutil==2.6.1
 python-editor==1.0.3
 python-escpos==2.1.3
 pyusb==1.0.1
-PyYAML==5.1.2
+PyYAML==5.3.1
 qrcode==5.3
 requests==2.20.0
 six==1.12.0

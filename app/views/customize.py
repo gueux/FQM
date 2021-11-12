@@ -664,6 +664,7 @@ def background_tasks():
     form = BackgroundTasksForms()
     cache_tts = data.BackgroundTask.get(name='CacheTicketsAnnouncements')
     delete_tickets = data.BackgroundTask.get(name='DeleteTickets')
+    last_will_tickets = data.BackgroundTask.get(name='LastWillTickets')
 
     def _resolve_time(every, time):
         return time if every in EVERY_TIME_OPTIONS else None
@@ -675,6 +676,8 @@ def background_tasks():
         delete_tickets.every = form.delete_tickets_every.data
         delete_tickets.time = _resolve_time(delete_tickets.every,
                                             form.delete_tickets_time.data)
+        last_will_tickets.enabled = form.last_will_tickets_enabled.data
+        last_will_tickets.every = form.last_will_tickets_every.data
 
         db.session.commit()
         stop_tasks()
@@ -688,6 +691,8 @@ def background_tasks():
         form.delete_tickets_enabled.data = delete_tickets.enabled
         form.delete_tickets_every.data = delete_tickets.every
         form.delete_tickets_time.data = delete_tickets.time
+        form.last_will_tickets_enabled.data = last_will_tickets.enabled
+        form.last_will_tickets_every.data = last_will_tickets.every
 
     return render_template('background_tasks.html',
                            page_title='Background Tasks',

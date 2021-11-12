@@ -765,6 +765,9 @@
         "fr": "Ne vid\u00e9o pas assign",
         "it": "Fare video non assegnazione"
     },
+    "Drop tickets by MQTT Last Will :": {
+        "en": "Drop tickets by MQTT Last Will :"
+    },
     "Duration": {
         "ar": "\u0627\u0644\u0645\u062f\u0629 \u0627\u0644\u0632\u0645\u0646\u064a\u0629",
         "en": "Duration",
@@ -799,6 +802,9 @@
         "es": "Habilitar",
         "fr": "Activer",
         "it": "Abilitare"
+    },
+    "Enable Last Will tickets :": {
+        "en": "Enable Last Will tickets :"
     },
     "Enable caching text-to-speech announcements :": {
         "ar": "\u062a\u0645\u0643\u064a\u0646 \u0627\u0644\u062a\u062e\u0632\u064a\u0646 \u0627\u0644\u0645\u0624\u0642\u062a \u0627\u0644\u0625\u0639\u0644\u0627\u0646\u0627\u062a \u062a\u062d\u0648\u064a\u0644 \u0627\u0644\u0646\u0635 \u0625\u0644\u0649 \u0643\u0644\u0627\u0645:",
@@ -862,6 +868,12 @@
         "es": "Ingresa un subt\u00edtulo:",
         "fr": "Entrez un sous-titre:",
         "it": "Inserisci un sottotitolo:"
+    },
+    "Enter a text header : ": {
+        "en": "Enter a text header : "
+    },
+    "Enter a text sub-header : ": {
+        "en": "Enter a text sub-header : "
     },
     "Enter a title :": {
         "ar": "\u0623\u062f\u062e\u0644 \u0627\u0644\u0639\u0646\u0648\u0627\u0646:",
@@ -1310,6 +1322,9 @@
         "es": "Efecto de desvanecimiento",
         "fr": "Effet de fondu",
         "it": "Effetto dissolvenza"
+    },
+    "Field must be between 2 and 10 characters long.": {
+        "en": "Field must be between 2 and 10 characters long."
     },
     "First Template": {
         "ar": "\u0623\u0648\u0644 \u0642\u0627\u0644\u0628",
@@ -2579,6 +2594,9 @@
         "es": "Reiniciar",
         "fr": "R\u00e9initialiser",
         "it": "Reset"
+    },
+    "Reset admin password": {
+        "en": "Reset admin password"
     },
     "Reset all": {
         "ar": "\u0625\u0639\u0627\u062f\u0629 \u0636\u0628\u0637 \u0627\u0644\u062c\u0645\u064a\u0639",

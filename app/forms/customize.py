@@ -289,3 +289,7 @@ class BackgroundTasksForms(LocalizedForm):
                                        choices=[(o, o) for o in EVERY_OPTIONS])
     delete_tickets_time = TimeField(_time_message,
                                     validators=[Optional()])
+    last_will_tickets_enabled = BooleanField('Drop tickets by MQTT Last Will :')
+    last_will_tickets_every = SelectField(_every_message,
+                                       coerce=str,
+                                       choices=[(o, o) for o in EVERY_OPTIONS])

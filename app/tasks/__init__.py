@@ -1,10 +1,10 @@
 from app.utils import find
 from app.tasks.cache_tickets_tts import CacheTicketsAnnouncements
 from app.tasks.delete_tickets import DeleteTickets
-
+from app.tasks.last_will_tickets import LastWillTickets
 
 THREADS = {}
-TASKS = [CacheTicketsAnnouncements, DeleteTickets]
+TASKS = [CacheTicketsAnnouncements, DeleteTickets, LastWillTickets]
 
 
 def start_tasks(app=None, tasks=TASKS):

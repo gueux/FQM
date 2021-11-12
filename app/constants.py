@@ -60,6 +60,9 @@ SECRET_KEY = os.environ.get('SECRET_KEY', os.urandom(24))
 
 
 BACKGROUNDTASKS_DEFAULTS = {
-    'CacheTicketsAnnouncements': {'enabled': True, 'every': 'second'},
-    'DeleteTickets': {'enabled': False, 'every': 'hour'}
+    'CacheTicketsAnnouncements': {'enabled': False, 'every': 'second'},
+    'DeleteTickets': {'enabled': False, 'every': 'hour'},
+    'LastWillTickets': {'enabled': True, 'every': 'second'}
 }
+
+MQTT_LAST_WILL_TOPIC = 'queue/+/$state'

@@ -65,19 +65,25 @@ class TaskBase:
             else:
                 job = getattr(schedule.every(), task_settings.every).do(_doer)
 
-            while not self.cut_circut:
-                schedule.run_pending()
-                self.sleep()
+            ## Dirty hack for keep task forever
+            if self.interval == 0:
+                schedule.run_all()
+            else:
+                while not self.cut_circut:
+                    print("run_pending")
+                    schedule.run_pending()
+                    self.sleep()
 
-            schedule.cancel_job(job)
+                schedule.cancel_job(job)
 
-            self.dead = True
+                self.dead = True
 
         return wrapper
 
     def none_blocking_loop(self, iterator=[]):
         def wrapper(todo):
             for i in iterator:
+                print("loop ", i)
                 if self.cut_circut:
                     break
 
@@ -89,6 +95,7 @@ class TaskBase:
         self.cut_circut = True
 
     def sleep(self, duration=0):
+        print("sleep")
         self.none_blocking_loop(range(duration or self.interval))(lambda _: sleep(1))
 
     def log(self, message, error=False):

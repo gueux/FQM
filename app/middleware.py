@@ -4,13 +4,16 @@ from flask_login import LoginManager
 from flask_uploads import UploadSet, ALL
 from flask_googletrans import translator
 from flask_gtts import gtts
+from flask_mqtt import Mqtt
 
-from app.constants import MIGRATION_FOLDER
+from app.constants import MIGRATION_FOLDER,MQTT_LAST_WILL_TOPIC
 
 # NOTE: Work around for flask imports and registering blueprints
 # currently needed for sql alchemy, login manager and flask-uploads
 
 db = SQLAlchemy()
+mqtt = Mqtt()
+
 migrate = Migrate(directory=MIGRATION_FOLDER, compare_type=True)
 login_manager = LoginManager()
 login_manager.login_view = "login"
