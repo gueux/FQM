@@ -174,6 +174,10 @@ def serial_rt(task, ofc_id=None):
     return redirect(url_for('manage_app.task', o_id=task.id, ofc_id=ofc_id))
 
 
+@core.route('/serial/qr', methods=['GET'])
+def serial_qr(office_id=None):
+    return render_template('serial_qr.html')
+
 @core.route('/pull', defaults={'o_id': None, 'ofc_id': None})
 @core.route('/pull/<int:o_id>/<int:ofc_id>')
 @login_required

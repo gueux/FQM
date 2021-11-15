@@ -25,7 +25,7 @@ from app.database import Settings, Serial, Office
 from app.tasks import start_tasks
 from app.api.setup import setup_api
 from app.constants import (SUPPORTED_LANGUAGES, SUPPORTED_MEDIA_FILES, VERSION, MIGRATION_FOLDER,
-                           DATABASE_FILE, SECRET_KEY)
+                           DATABASE_FILE, SECRET_KEY, DEBUG)
 
 
 def create_app(config={}):
@@ -55,6 +55,7 @@ def create_app(config={}):
     app.config['MQTT_BROKER_PORT'] = os.environ.get('MQTT_BROKER_PORT', 1883)
     app.config['MQTT_USERNAME'] = os.environ.get('MQTT_USERNAME', '')
     app.config['MQTT_PASSWORD'] = os.environ.get('MQTT_PASSWORD', '')
+    app.config['DEBUG'] = DEBUG
     app.config.update(config)
 
     # Initiating extensions before registering blueprints

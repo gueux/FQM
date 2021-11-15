@@ -1,0 +1,14 @@
+<html>
+    <head>
+        <title>{% block title %} Serial QR Code {% endblock %}</title>
+    </head>
+    <body>
+        <noscript>
+            /* checking if nojs is on */
+            <style>html{display:none;}</style>
+            <meta http-equiv="refresh" content="0.0;url=/nojs/0">
+        </noscript>
+        {% from '_modals.html' import qrModal %}
+        {{ qrModal([['touch_qr', translate('QR code touch screen', 'en', [defLang]), qrcode(url_for('core.touch', a=0, _external=True))]], close=translate('Exit', 'en', [defLang])) }}
+    </body>
+</html>

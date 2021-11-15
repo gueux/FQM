@@ -2,6 +2,7 @@ import os
 
 from app.env_vars import VERSION  # noqa
 
+DEBUG = True
 
 SUPPORTED_LANGUAGES = {
     # NOTE: The officially supported languages.
